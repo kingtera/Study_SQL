@@ -37,3 +37,14 @@ safe_query_job = client.query(query, job_config=safe_config)
 safe_query_job.to_dataframe()
 
 #ORDER BY is usually the last clause in your query, and it sorts the results returned by the rest of your query.
+
+#NESTED DATA [see images with tags 'nested']
+# In this case, all of the information from the toys table is collapsed into a single column (the "Toy" column in the pets_and_toys table).
+# We refer to the "Toy" column in the pets_and_toys table as a nested column, and say that the "Name" and "Type" fields are nested inside of it.
+#Nested data columns have type STRUCT or RECORDS
+
+#REPEATED DATA [see images with tags 'repeated']
+# We say that the "Toys" column contains repeated data, because it permits more than one value for each row.
+# This is reflected in the table schema below, where the mode of the "Toys" column appears as 'REPEATED'.
+
+# When querying repeated data, we need to put the name of the column containing the repeated data inside an UNNEST() function.
